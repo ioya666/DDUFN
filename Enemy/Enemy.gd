@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-onready var food = get_parent().get_node("Player1")
+onready var food = get_parent().get_node("Food")
 var velocity = Vector2.ZERO
-var top_speed = 1
+var top_speed = 0.5
 var acceleration = 10
 var friction = 400
 
