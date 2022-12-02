@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Collision/Hurtbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/waterbarrel.png" type="Texture" id=2]
+[ext_resource path="res://World/WaterBarrel.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
+height = 6.0
+
+[node name="WaterBarrel" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -8, -16 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 1 )]
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -3 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]

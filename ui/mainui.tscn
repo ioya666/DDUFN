@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/HealthBarFull.png" type="Texture" id=1]
+[ext_resource path="res://ui/HealthBarEmpty.png" type="Texture" id=2]
+[ext_resource path="res://ui/WaterUI.gd" type="Script" id=3]
+
+[node name="WaterUI" type="Control"]
+margin_right = 20.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 342.0 ]
+}
+
+[node name="WaterBar" type="TextureProgress" parent="."]
+margin_left = 215.0
+margin_top = 333.0
+margin_right = 279.0
+margin_bottom = 349.0
+rect_scale = Vector2( 4, 4 )
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+texture_progress_offset = Vector2( 6, 6 )
+
+[node name="WaterBarText" type="Label" parent="WaterBar"]
+margin_right = 20.0
+margin_bottom = 14.0
