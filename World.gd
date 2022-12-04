@@ -14,7 +14,7 @@ func on_timeout():
 	var rand = RandomNumberGenerator.new()
 	var screen_size = get_viewport().get_visible_rect().size
 	
-	for i in range(0,2):
+	for i in range(0,40):
 		var enem = enemy.instance()
 		rand.randomize()
 		var x = rand.randf_range(0, screen_size.x)
