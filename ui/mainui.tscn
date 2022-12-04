@@ -20,7 +20,3 @@ rect_scale = Vector2( 4, 4 )
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
 texture_progress_offset = Vector2( 6, 6 )
-
-[node name="WaterBarText" type="Label" parent="WaterBar"]
-margin_right = 20.0
-margin_bottom = 14.0

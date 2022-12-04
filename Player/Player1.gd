@@ -1,7 +1,5 @@
 extends KinematicBody2D
-
 const bulletPath = preload("res://Player/Bullet.tscn")
-onready var timer = $Timer
 
 var velocity = Vector2.ZERO
 var top_speed = 1
@@ -36,7 +34,6 @@ func _physics_process(delta):
 func shoot():
 	var hasAmmo : bool = ammo > 0
 	if not hasAmmo: 
-		reload()
 		return
 	var bullet = bulletPath.instance()
 	get_parent().add_child(bullet)
@@ -44,9 +41,5 @@ func shoot():
 	bullet.velocity = get_global_mouse_position() - bullet.position
 	ammo = ammo - 1
 
-func reload():
-	if timer.is_stopped():
-		timer.start()
-
-func _on_Timer_timeout():
+func on_timeout():
 	ammo = 1

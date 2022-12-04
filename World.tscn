@@ -48,17 +48,11 @@ position = Vector2( 465, 79 )
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 300, 224 )
 
-[node name="Timer" type="Timer" parent="Player1"]
-one_shot = true
-
 [node name="Player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 392, 224 )
 
 [node name="Position2D" parent="Player2/Node2D" index="0"]
 position = Vector2( 14, 0 )
-
-[node name="Timer" type="Timer" parent="Player2"]
-one_shot = true
 
 [node name="WaterBarrel" parent="." instance=ExtResource( 5 )]
 position = Vector2( 320, 190 )
@@ -66,9 +60,6 @@ position = Vector2( 320, 190 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WaterUI" parent="CanvasLayer" instance=ExtResource( 6 )]
-
-[connection signal="timeout" from="Player1/Timer" to="Player1" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Player2/Timer" to="Player2" method="_on_Timer_timeout"]
 
 [editable path="Enemy"]
 [editable path="Enemy/Hurtbox"]

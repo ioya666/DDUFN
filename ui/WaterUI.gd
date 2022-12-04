@@ -4,11 +4,10 @@ var water = 4 setget set_water
 var max_water = 4 setget set_max_water
 
 onready var waterBar = $WaterBar
-onready var waterBarText = $WaterBar/WaterBarText
 
 func set_water(value):
 	water = clamp(value, 0, max_water)
-	waterBarText.text = str(int(water),str("/"), max_water)
+	
 	water = range_lerp(water, 0, max_water, waterBar.min_value, waterBar.max_value)
 	if waterBar != null:
 		waterBar.value = water
